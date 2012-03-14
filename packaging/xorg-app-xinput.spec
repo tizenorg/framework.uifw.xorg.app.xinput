@@ -1,5 +1,4 @@
-
-Name:       xorg-x11-utils-xinput
+Name:       xorg-app-xinput
 Summary:    X.Org X11 xinput utility
 Version:    1.5.2
 Release:    2
@@ -12,7 +11,6 @@ BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xext)
 BuildRequires:  pkgconfig(xi)
 BuildRequires:  pkgconfig(inputproto)
-Obsoletes:   xorg-x11-app-xinput
 
 
 %description
@@ -25,23 +23,18 @@ Description: %{summary}
 
 
 %build
-
-%reconfigure --disable-static \
-    --libdir=%{_datadir}
-
+%reconfigure --libdir=%{_datadir}
 make %{?jobs:-j%jobs}
 
 %install
-rm -rf %{buildroot}
 %make_install
 
 
 
+%docs_package
 
 
 %files
-%defattr(-,root,root,-)
 %{_bindir}/xinput
-%{_mandir}/man1/xinput.1.gz
 
 
