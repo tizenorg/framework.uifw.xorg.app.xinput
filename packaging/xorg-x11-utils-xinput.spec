@@ -21,7 +21,7 @@ Description: %{summary}
 
 
 %prep
-%setup -q -n xinput-%{version}
+%setup -q -n %{name}-%{version}
 
 
 %build
