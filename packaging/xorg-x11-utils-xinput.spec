@@ -7,6 +7,7 @@ Group:      System/X11
 License:    MIT
 URL:        http://www.x.org
 Source0:    http://xorg.freedesktop.org/releases/individual/app/xinput-%{version}.tar.gz
+Source1001: packaging/xorg-x11-utils-xinput.manifest 
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xext)
@@ -25,6 +26,7 @@ Description: %{summary}
 
 
 %build
+cp %{SOURCE1001} .
 
 %reconfigure --disable-static \
     --libdir=%{_datadir}
@@ -40,6 +42,7 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest xorg-x11-utils-xinput.manifest
 %defattr(-,root,root,-)
 %{_bindir}/xinput
 %{_mandir}/man1/xinput.1.gz
