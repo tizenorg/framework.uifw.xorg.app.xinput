@@ -1,0 +1,20 @@
+* Fri Jun 22 2012 Anas Nashif <anas.nashif@intel.com> f6b0399
+- fixed tarball and package naming
+
+* Wed May 30 2012 Ryan Ware <ryan.r.ware@intel.com> 3669f48
+- Add default Smack manifest for xorg-x11-utils-xinput.spec
+
+* Fri May 18 2012 Yang Lin <lin.a.yang@intel.com> a479952
+- clean tarball setup path to facilitate hudson automation submission
+
+* Sun Apr 29 2012 Kim Kibum <kb0929.kim@samsung.com> eff4dca
+- upload tizen1.0 source
+
+* Wed Mar 14 2012 Yan Yin <yan.yin@intel.com> 6f2380b
+- update for beta universally
+
+* Fri Jan 06 2012 Kibum Kim <kb0929.kim@samsung.com> 19a49ef
+- Git init
+[ Eunkyoung Kim ]
+- Initial empty repository
+
