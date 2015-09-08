@@ -1,4 +1,4 @@
-%define _unpackaged_files_terminate_build 0 
+%define _unpackaged_files_terminate_build 0
 
 Name:	xorg-x11-xinput
 Summary:    X.Org X11 xinput utility
@@ -30,6 +30,8 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/license
+cp -af COPYING %{buildroot}/usr/share/license/%{name}
 
 %remove_docs
 
@@ -37,6 +39,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
+/usr/share/license/%{name}
 %{_bindir}/xinput
 #%{_mandir}/man1/xinput.1.gz
 
