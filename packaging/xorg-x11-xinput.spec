@@ -2,8 +2,8 @@
 
 Name:	xorg-x11-xinput
 Summary:    X.Org X11 xinput utility
-Version: 1.6.0
-Release:    2
+Version: 1.6.3
+Release:    1
 Group:      System/X11
 License:    MIT
 URL:        http://www.x.org
@@ -23,7 +23,8 @@ Description: %{summary}
 %setup -q
 
 %build
-%reconfigure --disable-static \
+%autogen
+%configure --disable-static \
     --libdir=%{_datadir}
 
 make %{?jobs:-j%jobs}
@@ -38,6 +39,7 @@ cp -af COPYING %{buildroot}/usr/share/license/%{name}
 %make_install
 
 %files
+%manifest xinput.manifest
 %defattr(-,root,root,-)
 /usr/share/license/%{name}
 %{_bindir}/xinput
